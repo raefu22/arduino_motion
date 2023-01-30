@@ -1,0 +1,18 @@
+#include <Stepper.h>
+
+int stepsPerRevolution = 800;
+// calibrate this number to fit the number of steps per revolution for your motor.
+// initialize the stepper library on pins 8 through 11, note the order of the pins
+Stepper myStepper(stepsPerRevolution, 8, 10, 9, 11);
+
+void setup() {  // set the speed
+    myStepper.setSpeed(20);
+}
+
+void loop() {  // step one revolution in one direction:
+  myStepper.step(stepsPerRevolution);
+  delay(500);
+  // step one revolution in the other direction
+  myStepper.step(-stepsPerRevolution);
+  delay(500);
+ }
