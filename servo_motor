@@ -1,0 +1,5 @@
+#include <Servo.h>
+
+// declare servo pin
+int servoPin = 3;
+// create a servo object
