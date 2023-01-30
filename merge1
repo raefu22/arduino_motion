@@ -1,0 +1,26 @@
+#include <Stepper.h>  // using stepper motor
+
+int stepsPerRevolution = 800;
+int lightOn = ;
+int led1 = 7?;
+
+Stepper myStepper(stepsPerRevolution, 8, 10, 9, 11);
+
+void setup() {
+  Serial.begin(9600);
+  myStepper.setSpeed(20);
+  pinMode(led1, OUTPUT);
+}
+
+void loop() {
+  int x = analogRead(A0);
+  Serial.println(x);
+  if (x < lightOn) {
+    digitalWrite(led1, HIGH);
+    myStepper.step(stepsPerRevolution);
+    delay(500);
+  } else {
+    digitalWrite(led1, LOW);
+  }
+  delay(5);
+}
