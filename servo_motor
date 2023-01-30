@@ -3,3 +3,24 @@
 // declare servo pin
 int servoPin = 3;
 // create a servo object
+Servo Servo1;
+
+void setup() {
+  // attach servo to used pin
+  pinMode(servoPin, OUTPUT);
+  Servo1.attach(servoPin);
+}
+
+void loop() {
+  // make servo go to 0 degrees
+  Servo1.write(0);
+  delay(1000);
+  
+  //make servo go 90 degrees
+  Servo1.write(90);
+  delay(1000);
+  
+  // 180 degrees
+  Servo1.write(180);
+  delay(1000);
+}
